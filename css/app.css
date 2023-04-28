@@ -1,0 +1,455 @@
+body{
+  background-color: black;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+a.nav-link{
+
+    font-weight: bold;
+    font-size: 20px;
+    color:white;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-variant: small-caps;
+    font-weight: 100;
+      
+}
+.logo {
+  text-align: center;
+}
+.carousel-control-prev{
+
+  padding-right: 150px;
+
+}
+
+.carousel-control-next{
+
+  padding-left: 150px;
+
+}
+
+.navbar{
+
+  background-color: black;
+  color: lightgray;
+}
+
+
+a.navbar-brand{
+
+  color: white;
+
+}
+
+.navbar-toggler{
+
+  background-color: lightgray;
+
+}
+
+.offcanvas-body{
+
+  background-color: lightgray;
+
+}
+
+.offcanvas-header{
+
+  background-color: black;
+  border: 3px solid gray;
+  text-align: center;
+
+}
+
+.offcanvas-title{
+
+  text-align: center;
+
+}
+
+.animation {
+  margin-top: 100px;
+  object-fit:cover;
+  -webkit-box-reflect:below 2px linear-gradient(transparent, transparent, #0004);
+  transform-origin:center;
+  transform:perspective(800px) rotateY(30deg);
+  transition:0.5s;
+}
+
+.card-custom{
+  max-width: 381px;
+  max-height: 584px;
+}
+.offcanvas-body{
+  background-image: url("../img/sidebar.jpg");
+}
+.btn-outline-success{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,0.87718837535014) 11%, rgba(204,21,144,0.8323704481792717) 73%, rgba(189,100,176,1) 100%);
+  color: white;
+  font-style:bold;
+  border-color: black;
+}
+
+.btn:hover{
+  
+  border:black;
+}
+.bs-btn-active-border{
+  background-color: black;
+  border: black;
+}
+footer{
+  background-color: black;
+  color: white;
+}
+body.home footer{
+  margin-top: 150px;
+}
+.carousel-item{
+  border-bottom: white 1px solid;
+}
+.felsokep{
+  margin-bottom: 100px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 58px 0 0; 
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 600;
+}
+
+body.home {
+  background-color: black;
+}
+
+body.shop{
+  background-image: url('../img/background.jpg');
+}
+
+body.blog{
+
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+
+}
+
+body.blog2{
+
+  background-color: black;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+
+}
+
+.container{
+
+  width: 100%;
+
+}
+
+.container .row{
+
+  width: 80%;
+  margin: auto;
+
+}
+
+.container .row .header{
+
+  width: 60%;
+  text-align: center;
+  margin: auto;
+
+}
+
+.content{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  color: white;
+
+}
+
+.container .row .header h1{
+
+  padding-top: 30px;
+  font-size: 45px;
+  color: #e19c30;
+  font-weight: bold;
+
+}
+
+.container .row .header p{
+
+  margin-top: 15px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #6e6e6e;
+
+}
+
+.content .card{
+
+  flex: 1;
+  margin: 50px 20px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+  background-color: #fff;
+  height: 550px;
+
+}
+
+.content .card img{
+
+  width: 100%;
+  height: auto;
+
+}
+
+.content .card h4{
+
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 18px;
+
+}
+
+.content .card p{
+
+  font-size: 15px;
+  color: #6e6e6e;
+  line-height: 1.5;
+  padding: 10px;
+
+}
+
+@media screen and (max-width: 768px){
+  .content{
+    flex-direction: column;
+
+  }
+}
+
+.blog2-img{
+
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  padding-bottom: 10px;
+}
+
+.blog2-text{
+
+  font-size: 30px;
+  font-weight: bold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  padding-top: 20px;
+  color: rgb(38, 0, 252);
+}
+
+.blog2-text-2{
+
+font-size: 20px;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+text-align: justify;
+color: white;
+
+}
+
+.leiras{
+
+  color: black;
+  font-weight: bold;
+  font-style: italic;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  color: black;
+
+}
+
+.ar{
+
+  font-weight: bold;
+
+}
+
+.megnevezes{
+
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 0px 1px 3px #aca9a9;
+
+}
+
+.card {
+  transition: transform .2s;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+}
+.card:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+button#cipok.btn.btn-warning.mx-2.text-uppercase.ng-binding.ng-scope{
+
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  border: 1px solid black;
+  
+}
+
+button#kesztyuk.btn.btn-warning.mx-2.text-uppercase.ng-binding.ng-scope{
+
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  border: 1px solid black;
+
+}
+
+button#labdak.btn.btn-warning.mx-2.text-uppercase.ng-binding.ng-scope{
+
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  border: 1px solid black;
+
+}
+
+button#mezek.btn.btn-warning.mx-2.text-uppercase.ng-binding.ng-scope{
+
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  border: 1px solid black;
+
+}
+
+button#salak.btn.btn-warning.mx-2.text-uppercase.ng-binding.ng-scope{
+
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  border: 1px solid black;
+
+}
+
+.leiras{
+
+  color: black;
+  font-weight: bold;
+  font-style: italic;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  color: black;
+
+}
+
+.ar{
+
+  font-weight: bold;
+
+}
+
+.megnevezes{
+
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+img.card-img-top{
+
+  border: 3px solid black;
+
+}
+
+li#cipok.d-inline.mx-3.text-white.text-uppercase.ng-binding.ng-scope{
+
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+
+}
+
+li#kesztyuk.d-inline.mx-3.text-white.text-uppercase.ng-binding.ng-scope{
+
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+
+}
+
+li#labdak.d-inline.mx-3.text-white.text-uppercase.ng-binding.ng-scope{
+
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+
+}
+
+li#mezek.d-inline.mx-3.text-white.text-uppercase.ng-binding.ng-scope{
+
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+
+}
+
+li#salak.d-inline.mx-3.text-white.text-uppercase.ng-binding.ng-scope{
+
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+
+}
+/* Blog oldal */
+.blogszoveg{
+  text-align: justify;
+}
+.blogcim{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+}
+.blog2-text{
+  text-transform: capitalize;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+label.form-label{
+
+color: white;
+font-weight: bold;
+
+}
+
+.contact-text{
+
+  color: white;
+  font-weight: bold;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+
+}

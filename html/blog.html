@@ -1,0 +1,39 @@
+<div ng-include src="'./html/navigate.html'"></div>
+
+<body>
+  
+  <div class="container">
+    <div class="row">
+      <div class="header">
+        <h1>Üdvözöllek a blog oldalon!</h1>
+        <p>Néhány érdekes hír a futball világában, nézz küröl!</p>
+      </div>
+      <div class="content">
+        <div class="card">
+          <img src="./img/haaland.png" alt="Haaland">
+          <h4 class="blogcim">A Manchester City is foglalt egy helyet az elődöntőbe!</h4>
+          <p class="blogszoveg">A labdarúgó Bajnokok Ligája negyeddöntőjének visszavágóján a Manchester City 1–1-es döntetlent játszott a Bayern Münchennel, így Pep Guardiola együttese 4–1-es összesítéssel bejutott a legjobb négybe. A Bayern Münchennek nagyon nehéz dolga volt a Manchester City elleni visszavágón azok után, hogy az Etihad Stadionban 3–0-s vereséget szenvedett el.</p>
+          <a ui-sref="blog2" type="button" class="btn btn-primary">Elolvasom</a>
+        </div>
+        <div class="card">
+          <img src="./img/milan.jpg" alt="AC Milan">
+          <h4 class="blogcim">Az AC Milan csapata 16 év után jutott ismét BL elődöntőbe!</h4>
+          <p class="blogszoveg">Az AC Milan a BL negyeddöntő visszavágóján nagyon sokáig úgy is vezetett 1–0-ra a Napoli vendégeként, hogy Oliver Giroud a gólja előtt kihagyott egy tizenegyest. A második félidőben Mike Maignan is védett egy tizenegyest, Victor Osimhen pedig ugyan a hajrában egy fejessel egyenlített, de a Milan nyerte a párharcot 2–1-es összesítéssel. Az AC Milan ellenfele az elődöntőben pedig a rivális Inter lesz.</p>
+          <a ui-sref="blog2" type="button" class="btn btn-primary">Elolvasom</a>
+        </div>
+        <div class="card">
+          <img src="./img/madrid.jpg" alt="Real Madrid">
+          <h4 class="blogcim">A Chelsea ezúttal sem tudta legyőzni a Real Madrid csapatát!</h4>
+          <p class="blogszoveg">Megvolt az esélye a fordításra, de legalábbis a szépítésre, a Chelsea azonban kihagyta a helyzeteit, amit a Real Madrid gólokkal büntetett meg. A címvédő idegenben is 2-0-ra győzött, így 4-0-s összesítéssel jutott tovább a labdarúgó Bajnokok Ligája negyeddöntőjéből. Tehát a Real folytathata a tavalyi útját, az elődöntőben jó eséllyel ismét a Manchester City lesz az ellenfele.</p>
+          <a ui-sref="blog2" type="button" class="btn btn-primary">Elolvasom</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--Lábléc-->
+<footer class="footer text-center text-lg-start text-muted mt-10"
+        ng-include src="'./html/footer.html'">
+</footer>
+
+</body>

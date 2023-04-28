@@ -1,0 +1,96 @@
+<style>
+	table#outer > tbody > tr.selected {
+		background-color: aquamarine;
+	}
+</style>
+
+<!--Fejléc-->
+<div ng-include src="'./html/navigate.html'"></div>
+
+<div class="container py-5">
+    
+	<div class="row">
+
+		<div class="bg-light rounded-3 py-5" style="overflow-x:auto;">
+
+			<h1 class="text-center mb-5">
+				<i class="fa-solid fa-thumbs-up"></i>
+				<span>Rendeléseim</span>
+			</h1>
+
+			<table 	id="outer"
+							class="table table-bordered table-striped table-sm mx-1 w-auto mx-auto">
+
+				<thead class="table-dark">
+					<tr>
+						<th class="text-start" 
+								ng-repeat="(k, v) in helper1">
+							{{v}}
+						</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr data-index="{{$index}}"
+							ng-if="data.length" 
+							ng-repeat="order in data track by $index"
+							ng-class="{'selected': pointer === $index}"
+							ng-click="orderSelect($event)">
+						<td class="align-middle"
+								ng-class="{'text-end':  k==='osszeg', 'text-center':  k==='fizetesimod'}"
+								ng-repeat="(k, v) in helper1">
+							<span ng-if="k!=='osszeg' && k!=='fizetesimod'">
+								{{order[k]}}
+							</span>
+							<span ng-if="k==='osszeg'" class="text-nowrap">
+								{{order[k] | numSep}}
+							</span>
+							<span ng-if="k==='fizetesimod'">
+								{{order[k] === 'C' ? 'Bankártya' : 'Utalás'}}
+							</span>
+						</td>
+					</tr>
+
+					<tr ng-if="!data.length">
+						<td colspan="9" class="text-center align-middle">üres</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="table table-bordered table-striped table-sm mx-1 w-auto mx-auto mt-3"
+						 ng-if="pointer >= 0">
+				<thead class="table-dark">
+					<tr>
+						<th class="text-start" 
+								ng-repeat="(k, v) in helper2">
+							{{v}}
+						</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr ng-repeat="item in data[pointer].items">
+						<td class="text-start align-middle" 
+								ng-repeat="(k, v) in helper2"
+								ng-class="{'text-end':  k==='ar' || k==='osszeg' || k==='darab',
+													 'text-center':  k==='meret'}">
+							<span ng-if="k!=='kep' && k!=='ar' && k!=='osszeg'">
+								{{item[k]}}
+							</span>
+							<span ng-if="k==='ar' || k==='osszeg'" class="text-nowrap">
+								{{item[k] | numSep}}
+							</span>
+							<img ng-if="k==='kep'" height="50" alt="" 
+									 ng-src="./img/{{item.tipus_path}}/{{item.kep}}">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<!--Lábléc-->
+<footer class="footer text-center text-lg-start text-muted mt-10"
+        ng-include src="'./html/footer.html'">
+</footer>

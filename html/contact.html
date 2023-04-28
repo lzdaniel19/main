@@ -1,0 +1,41 @@
+<div ng-include src="'./html/navigate.html'"></div>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="contact-text">Üdvözöllek a kapcsolat oldalon!</h1>
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="firstName" class="form-label">Vezetéknév</label>
+                <input type="text" class="form-control" id="firstName" required>
+            </div>
+            <div class="col-md-6">
+                <label for="lastName" class="form-label">Keresztnév</label>
+                <input type="text" class="form-control" id="lastName" required>
+            </div>
+            <div class="col-md-8">
+                <label for="emailInfo" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="emailInfo" required>
+            </div>
+            <div class="col-md-4">
+                <label for="phoneNumber" class="form-label">Telefonszám</label>
+                <input type="text" class="form-control" id="phoneNumber" placeholder="+362342423423">
+            </div>
+            <div class="col-md-12">
+                <label for="comments" class="form-label">Megjegyzés,kérdés</label>
+                <textarea class="form-control" id="comments" rows="10">
+                </textarea>
+            </div>
+            <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Küldés</button>
+         </div>
+        </form>
+    </div>
+
+
+
+</body>
+
+<!--Lábléc-->
+<footer class="footer text-center text-lg-start text-muted mt-10"
+        ng-include src="'./html/footer.html'">
+</footer>

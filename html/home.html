@@ -1,0 +1,46 @@
+
+<!--Fejléc-->
+<div ng-include src="'./html/navigate.html'"></div>
+
+<!--Reklámsáv-->
+<div id="carouselExampleFade" class="carousel slide carousel-fade " data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active ">
+      <img src="./img/reklamsav1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="./img/reklamsav2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="./img/reklamsav3.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" 
+          data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Előző</span>
+  </button>
+  <button class="carousel-control-next" type="button" 
+          data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Következő</span>
+  </button>
+</div>
+
+<!--Kártyák-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"> <a ui-sref="contact"><img src="./img/kep4.jpg" alt="" class="animation card-custom" ></a> </div>
+    <div class="col-md-4"><a ui-sref="shop">
+      <img src="./img/kep1.jpg" alt="" class="animation card-custom"></a>
+    </div>
+    <div class="col-md-4"> <a ui-sref="blog"> 
+      <img src="./img/kep2.jpg" alt="" class="animation card-custom"></a>
+    </div>
+  </div>
+</div>
+
+<!--Lábléc-->
+<footer class="footer text-center text-lg-start text-muted mt-10"
+        ng-include src="'./html/footer.html'">
+</footer>

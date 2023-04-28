@@ -1,0 +1,255 @@
+<div ng-include src="'./html/navigate.html'"></div>
+
+<div class="d-flex flex-column">
+ 
+  <section class="py-5">
+    <div class="container">
+    
+      <div class="row">
+
+        <div class="bg-light rounded-3 py-5" 
+             style="overflow-x:auto;">
+
+          <h1 class="text-center mb-5">
+            <i class="fa fa-shopping-cart fa-lg"></i>
+            <span>Kosár</span>
+          </h1>
+
+          <table class="table table-bordered table-striped table-sm mx-1 w-auto mx-auto">
+
+            <thead class="table-dark">
+              <tr>
+                <th class="text-start" 
+                    ng-repeat="(k, v) in helper"
+                    colspan="{{k === 'total' ? '2' : '1'}}"
+                    ng-if="k !== 'size'">
+                  {{v}}
+              </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr data-index="{{$index}}" 
+                  ng-repeat="x in cart track by $index">
+                <td class="align-middle"
+                    ng-class="{'text-end': k==='ar' || k==='total'}" 
+                    ng-repeat="(k, v) in helper track by $index">
+                  <span ng-if="k!=='kep' && k!=='darab' && k!=='meret' && 
+                              k!=='total' && k!=='size' && k!=='ar'">
+                    {{x[k]}}
+                  </span>
+                  <span ng-if="k=='total'" ng-model="x[k]" class="text-nowrap">
+                    {{x[k] | numSep}}
+                  </span>
+                  <span ng-if="k=='ar'" ng-model="x[k]" class="text-nowrap">
+                    {{x[k] | numSep}}
+                  </span>
+                  <span ng-if="k==='meret'">
+                    <select class="form-select" style="width:130px;" 
+                            ng-model="x.size">
+                      <option ng-repeat="o in x[k] track by $index" 
+                              value="{{o}}"
+                              ng-selected="$index===0">
+                        {{o}}
+                      </option>
+                    </select>
+                  </span>
+                  <span ng-if="k==='darab'">
+                    <input type="number" class="form-control" value="1" 
+                           max="9" min="1" ng-change="changeQuantity()"
+                           ng-model="x[k]"
+                           id="quantity" style="width:65px;">
+                  </span>
+                  <img ng-if="k==='kep'" height="50" alt="" 
+                       ng-src="./img/{{x.tipus_path}}/{{x.kep}}">
+                  <button type="button" class="btn text-danger" 
+                          ng-if="k === 'size'"
+                          ng-click="deleteItem($event)">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+                </td>
+              </tr>
+            </tbody>
+
+            <tfoot>
+              <tr>
+                <td colspan="5"></td>
+                <th class="text-end" colspan="2">Összesen:</th>
+                <td class="text-end text-nowrap" colspan="2">{{sumCart | numSep}}</td>
+                <td class="text-start">Ft</td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <!-- Fieldset -->
+          <fieldset class="text-center">
+
+            <!-- Title -->
+            <legend class="w-100 text-center my-3">
+              <h4 >
+                <span>
+                  <i class="fa-solid fa-truck-fast me-2"></i>
+                </span>
+                <span>Szállítási cím</span>
+              </h4>
+            </legend>
+
+            <!-- Form -->
+            <form class="w-75 d-inline-block mt-3" action="#">
+
+              <!-- Name -->
+              <div class="input-item input-group input-row mb-3">
+
+                <!-- Label -->
+                <div class="col-12 col-lg-6 text-start text-lg-end px-0 px-lg-3">
+                  <label for="nev" class="col-form-label">
+                    <span class="text-danger fw-bold">*</span>
+                    <span>Név:</span>
+                  </label>
+                </div>
+              
+                <!-- Input name -->
+                <input id="nev" 
+                      type="text" 
+                      class="form-control col-12 col-lg-6"
+                      placeholder="név"
+                      spellcheck="false" 
+                      required
+                      maxlength="20"
+                      ng-model="model.nev"
+                      ng-change="isDataValid()">
+              </div>
+            
+              <!-- Address -->
+              <div class="input-item input-group input-row mb-3">
+
+                <!-- Label -->
+                <div class="col-12 col-lg-6 text-start text-lg-end px-0 px-lg-3">
+                  <label for="lakcim" class="col-form-label">
+                    <span class="text-danger fw-bold">*</span>
+                    <span>Cím:</span>
+                  </label>
+                </div>
+              
+                <!-- Input address -->
+                <input id="lakcim" 
+                      type="text" 
+                      class="form-control col-12 col-lg-6"
+                      placeholder="cím"
+                      spellcheck="false" 
+                      required
+                      maxlength="50"
+                      ng-model="model.lakcim" 
+                      ng-change="isDataValid()">
+              </div>
+            
+              <!-- Phone -->
+              <div class="input-item input-group input-row mb-3">
+
+                <!-- Label for phone -->
+                <div class="col-12 col-lg-6 text-start text-lg-end px-0 px-lg-3">
+                  <label for="telefonszam" class="col-form-label">
+                    <span class="text-danger fw-bold">*</span>
+                    <span>Telefon:</span>
+                  </label>
+                </div>
+              
+                <!-- Input phone -->
+                <input id="telefonszam" 
+                      type="text" 
+                      class="form-control col-12 col-lg-6" 
+                      placeholder="telefon" 
+                      spellcheck="false" 
+                      required
+                      maxlength="50"
+                      ng-model="model.telefonszam" 
+                      ng-change="isDataValid()">
+              </div>
+              
+              <!-- payment -->
+              <div class="input-item input-group input-row mb-3">
+
+                <!-- Label -->
+                <div class="col-12 col-lg-6 text-start text-lg-end px-0 px-lg-3">
+                  <label class="col-form-label">
+                    <span class="text-danger fw-bold">*</span>
+                    <span>Fizetési mód:</span>
+                  </label>
+                </div>
+                
+                <!-- checkbox -->
+                <div class="col-auto mt-2">
+                  <input class="form-check-input" 
+                         type="radio" 
+                         id="credit-card"          
+                         name="payment"
+                         ng-model="model.fizetesimod"
+                         value="C">
+                  <label class="form-check-label ms-1" 
+                         for="credit-card">
+                    Bankkártya
+                  </label>
+                </div>
+
+                <!-- checkbox -->
+                <div class="col-auto mt-2 ps-3">
+                  <input class="form-check-input" 
+                         type="radio" 
+                         id="bank-transfer"  
+                         name="payment"
+                         ng-model="model.fizetesimod"
+                         value="U">
+                  <label class="form-check-label ms-1" 
+                         for="bank-transfer">
+                    Banki átutalás
+                  </label>
+                </div>
+              </div>
+
+              <!-- Comment -->
+              <div class="input-item input-group input-row mb-3">
+
+                <!-- Label for comment -->
+                <div class="col-12 col-lg-6 text-start text-lg-end px-0 px-lg-3">
+                  <label for="comment" class="col-form-label">
+                    <span>Megjegyzés:</span>
+                  </label>
+                </div>
+              
+                <!-- Input comment -->
+                <textarea id="comment" 
+                          class="form-control col-12 col-lg-6"
+                          placeholder="megjegyzés"
+                          spellcheck="false" 
+                          ng-model="model.megjegyzes">
+                </textarea>
+              </div>
+            </form>
+          </fieldset>
+          <hr>
+
+          <div class="mt-5 w-100 text-center">
+            <button id="submit"
+                    type="button" class="btn btn-primary mx-2"
+                    style="width: 140px;" 
+                    ng-click="confirm()"
+                    disabled>
+              Vásárlás
+            </button>
+            <a class="nav-link d-inline-block" ui-sref="shop">
+              <button type="button" class="btn btn-secondary mx-2"
+                      style="width: 140px;">
+                Mégsem
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>     
+  </section>
+</div>
+
+<!--Lábléc-->
+<footer class="footer text-center text-lg-start text-muted mt-10"
+        ng-include src="'./html/footer.html'">
+</footer>

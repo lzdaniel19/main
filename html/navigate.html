@@ -1,0 +1,60 @@
+<style>
+  .shopping-item {
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: gray;
+    line-height: 25px;
+    font-size: 16px;
+  }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="row w-100">
+      <ul class="navbar-nav justify-content-center col-12 col-lg-11">
+        <li class="nav-item mx-2">
+          <a class="nav-link" aria-current="page" ui-sref="home">Kezdőlap</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" ui-sref="contact">Kapcsolat</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" ui-sref="blog">Blog</a>
+        </li>
+        <li class="mx-5 logo">
+          <img src="./img/logo.png" height="50px" alt="">
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" ui-sref="shop">Webshop</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" ui-sref="{{user ? 'order' : ''}}">Rendeléseim</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav justify-content-center justify-content-lg-end col-12 col-lg-1">
+        <li class="nav-item mx-2 text-center">
+          <a class="nav-link position-relative d-inline-block cursor-pointer"
+             ng-click="getCart()" style="width: 46px;">
+            <i class="fa fa-shopping-cart fa-lg"></i>
+            <div class="shopping-item position-absolute">{{cart.length}}</div>
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a ng-if="!user" class="nav-link" ui-sref="login">
+            <i class="fa-solid fa-right-to-bracket fa-lg"></i>
+          </a>
+          <a ng-if="user" class="nav-link cursor-pointer" ng-click="logout()">
+            <i class="fa-solid fa-right-from-bracket fa-lg"></i>
+          </a>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</nav>
